@@ -7,8 +7,7 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="<%=basePath%>">
@@ -25,7 +24,7 @@
 				<img src="images/logo.gif" />
 			</div>
 			<div class="help">
-				<a href="">返回前台页面</a>
+				<a href="HomeServlet?action=index">返回前台页面</a>
 			</div>
 			<div class="navbar">
 				<ul class="clearfix">
@@ -59,7 +58,7 @@
 						</dd>
 						<dd>
 							<em><a href="manage/product-add.jsp">新增</a></em><a
-								href="manage/user.jsp">商品管理</a>
+								href="manage/productClass.jsp">分类管理</a>
 						</dd>
 						<dt>订单管理</dt>
 						<dd>
@@ -71,7 +70,7 @@
 						</dd>
 						<dt>新闻管理</dt>
 						<dd>
-							<em><a href="news-add.jsp">新增</a></em><a href="news.jsp">新闻管理</a>
+							<em><a href="manage/news-add.jsp">新增</a></em><a href="manage/news.jsp">新闻管理</a>
 						</dd>
 					</dl>
 				</div>

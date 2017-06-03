@@ -5,7 +5,7 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">
@@ -49,9 +49,9 @@
 				<dd><em><a href="productClass-add.jsp">新增</a></em><a href="productClass.jsp">分类管理</a></dd>
 				<dd><em><a href="product-add.jsp">新增</a></em><a href="product.jsp">商品管理</a></dd>
 				<dt>订单管理</dt>
-				<dd><a href="order.jsp">订单管理</a></dd>
+				<dd><a href="manage/order.jsp">订单管理</a></dd>
 				<dt>留言管理</dt>
-				<dd><a href="guestbook.jsp">留言管理</a></dd>
+				<dd><a href="CommentServlet?action=list">留言管理</a></dd>
 				<dt>新闻管理</dt>
 				<dd><em><a href="news-add.jsp">新增</a></em><a href="news.jsp">新闻管理</a></dd>
 			</dl>

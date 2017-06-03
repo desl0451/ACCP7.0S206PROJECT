@@ -81,56 +81,16 @@
 			<div class="box">
 				<h2>商品分类</h2>
 				<dl>
-					<dt>图书音像</dt>
-					<dd>
-						<a href="product-list.jsp">图书</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">音乐</a>
-					</dd>
-					<dt>百货</dt>
-					<dd>
-						<a href="product-list.jsp">运动健康</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">服装</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">家居</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">美妆</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">母婴</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">食品</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">手机数码</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">家具首饰</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">手表饰品</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">鞋包</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">家电</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">电脑办公</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">玩具文具</a>
-					</dd>
-					<dd>
-						<a href="product-list.jsp">汽车用品</a>
-					</dd>
+					<c:forEach items="${categories}" var="category">
+						<c:if test="${category.id==category.parentId}">
+							<dt>${category.name}</dt>
+						</c:if>
+						<c:if test="${category.id!=category.parentId}">
+							<dd>
+								<a href="Home?action=product_list&categoryId=${category.id}">${category.name}</a>
+							</dd>
+						</c:if>
+					</c:forEach>
 				</dl>
 			</div>
 			<div class="spacer"></div>
@@ -162,18 +122,21 @@
 				<h2>商品列表</h2>
 				<ul class="product clearfix">
 					<c:forEach var="product" items="${productList}">
-					<li>
-						<dl>
-							<dt>
-								<a href="ProductServlet?id=${product.id}" target="_self"><img
-									src="images/product/${product.fileName}" /></a>
-							</dt>
-							<dd class="title">
-								<a href="ProductServlet?id=${product.id}" target="_self">${product.name}</a>
-							</dd>
-							<dd class="price">￥${product.price}</dd>
-						</dl>
-					</li>
+						<li>
+							<dl>
+								<dt>
+									<a href="ProductServlet?id=${product.id}" target="_self"><img
+										src="images/product/${product.fileName}" /></a>
+								</dt>
+								<dd class="title">
+									<a href="ProductServlet?id=${product.id}" target="_self">${product.name}</a>
+								</dd>
+								<dd class="price">
+									￥
+									<c:out value="${product.price}" />
+								</dd>
+							</dl>
+						</li>
 					</c:forEach>
 				</ul>
 			</div>
@@ -183,11 +146,9 @@
 					<h4>新闻动态</h4>
 					<ul>
 						<c:forEach var="news" items="${newsList}">
-						<li>
-							<a href="news-view.jsp">
-								<c:out value="${news.title}"/>
-							</a>
-						</li>
+							<li><a href="news-view.jsp"> <c:out
+										value="${news.title}" />
+							</a></li>
 						</c:forEach>
 					</ul>
 				</div>

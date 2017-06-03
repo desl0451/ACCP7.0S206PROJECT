@@ -1,13 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="cn.easybuy.dao.impl.NewsDaoImpl"%>
-<%@ page import="cn.easybuy.entity.News"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -24,7 +23,7 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-			<a href="index.jsp">返回前台页面</a>
+			<a href="HomeServlet?action=index">返回前台页面</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">
@@ -83,20 +82,16 @@
 						<th>新闻标题</th>
 						<th>操作</th>
 					</tr>
-					<%
-						NewsDaoImpl dao = new NewsDaoImpl();
-						List<News> newList = dao.GetALL();
-						for (News news : newList) {
-					%>
+					<c:forEach var="news" items="${newsList}">
 					<tr>
 						<td class="first w4 c">
-							<%out.println(news.getId());							%>
+							<c:out value="${news.id}"/>
 						</td>
-						<td><%out.println(news.getTitle());%></td>
+						<td><c:out value="${news.title}"/></td>
 						<td class="w1 c"><a href="news-modify.jsp">修改</a> 
-						<a class="manageDel" href="manage/del.jsp?id=<%=news.getId()%>">删除</a></td>
+						<a class="manageDel" href="NewsServlet?action=del&id=<c:out value="${news.id}"/>">删除</a></td>
 					</tr>
-					<%}	%>
+					</c:forEach>
 				</table>
 			</div>
 		</div>

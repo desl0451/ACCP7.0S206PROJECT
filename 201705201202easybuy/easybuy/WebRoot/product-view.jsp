@@ -5,7 +5,7 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
 <base href="<%=basePath%>">
@@ -15,6 +15,23 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="scripts/function.js"></script>
+<style type="text/css">
+.mui-amount-btn {
+    display: inline-block;
+    vertical-align: middle;
+}
+.tb-amount-widget .mui-amount-decrease, .tb-amount-widget .mui-amount-increase {
+    width: 16px;
+    height: 12px;
+    overflow: hidden;
+    border: 1px solid #a7a6ab;
+    display: block;
+    font-family: tm-detail-font;
+    line-height: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<div id="header" class="wrap">
@@ -128,11 +145,12 @@
 						height="106" />
 				</div>
 				<div class="buy">
-					商城价：<span class="price">￥${product.price}</span><br /> 库 存：有货
-					数量:${product.stock}
+					商城价：<span class="price">￥${product.price}</span><br /> 
+					库 存：有货
+					<span>数量:${product.stock}</span>
 					<div class="button">
 						<input type="button" name="button" value=""
-							onclick="location.href = 'address.jsp'" /><a href="CartServlet?">放入购物车</a>
+							onclick="location.href = 'address.jsp'" /><a href="CartServlet?id=${product.id}&action=add">放入购物车</a>
 					</div>
 				</div>
 				<div class="clear"></div>

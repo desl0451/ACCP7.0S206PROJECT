@@ -8,7 +8,7 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <base href="<%=basePath%>">
@@ -24,7 +24,7 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-			<a href="index.jsp">返回前台页面</a>
+			<a href="HomeServlet?action=index">返回前台页面</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">

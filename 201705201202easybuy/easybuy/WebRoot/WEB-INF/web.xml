@@ -17,10 +17,6 @@
     <servlet-name>UserDaoServlet</servlet-name>
     <url-pattern>/UserDaoServlet</url-pattern>
   </servlet-mapping>
-  <welcome-file-list>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
   <servlet>
     <description></description>
     <display-name>HomeServlet</display-name>
@@ -41,7 +37,32 @@
     <servlet-name>ProductServlet</servlet-name>
     <url-pattern>/ProductServlet</url-pattern>
   </servlet-mapping>
-  <session-config>
-  	<session-timeout>0</session-timeout>
-  </session-config>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/NewsServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>cn.easybuy.web.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CommentServlet</display-name>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>cn.easybuy.web.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/CommentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -4,7 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">
@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <div id="header" class="wrap">
 	<div id="logo"><img src="images/logo.gif" /></div>
-	<div class="help"><a href="index.jsp">返回前台页面</a></div>
+	<div class="help"><a href="HomeServlet?action=index">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
 			<li><a href="index.jsp">首页</a></li>
@@ -47,9 +47,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<dd><em><a href="productClass-add.jsp">新增</a></em><a href="productClass.jsp">分类管理</a></dd>
 				<dd><em><a href="product-add.jsp">新增</a></em><a href="product.jsp">商品管理</a></dd>
 				<dt>订单管理</dt>
-				<dd><a href="order.jsp">订单管理</a></dd>
+				<dd><a href="manage/order.jsp">订单管理</a></dd>
 				<dt>留言管理</dt>
-				<dd><a href="guestbook.jsp">留言管理</a></dd>
+				<dd><a href="CommentServlet?action=list">留言管理</a></dd>
 				<dt>新闻管理</dt>
 				<dd><em><a href="news-add.jsp">新增</a></em><a href="news.jsp">新闻管理</a></dd>
 			</dl>
@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
 		<h2>添加新闻</h2>
 		<div class="manage">
-			<form id="newsAdd" method="post" action="addnewsservlet">
+			<form id="newsAdd" method="post" action="NewsServlet?action=add">
 				<table class="form">
 					<tr>
 						<td class="field">新闻标题：</td>

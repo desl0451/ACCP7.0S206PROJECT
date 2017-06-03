@@ -5,8 +5,7 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -24,7 +23,7 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-			<a href="index.jsp">返回前台页面</a>
+			<a href="HomeServlet?action=index">返回前台页面</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">
@@ -65,11 +64,11 @@
 					</dd>
 					<dt>留言管理</dt>
 					<dd>
-						<a href="manage/guestbook.jsp">留言管理</a>
+						<a href="CommentServlet?action=list">留言管理</a>
 					</dd>
 					<dt>新闻管理</dt>
 					<dd>
-						<em><a href="manage/news-add.jsp">新增</a></em><a href="manage/news.jsp">新闻管理</a>
+						<em><a href="manage/news-add.jsp">新增</a></em><a href="NewsServlet?action=list">新闻管理</a>
 					</dd>
 				</dl>
 			</div>

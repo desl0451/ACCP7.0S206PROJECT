@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.easybuy.dao.impl.NewsDaoImpl;
+import cn.easybuy.dao.impl.ProductCategoryDaoImpl;
 import cn.easybuy.dao.impl.ProductDaoImpl;
 import cn.easybuy.entity.News;
 import cn.easybuy.entity.Product;
+import cn.easybuy.entity.ProductCategory;
 
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,8 +39,12 @@ public class HomeServlet extends HttpServlet {
 			// ##########…Ã∆∑###########
 			ProductDaoImpl pdao = new ProductDaoImpl();
 			List<Product> pList = pdao.GetALL();
-			System.out.println(pList.size()+"#######################:");
 			request.getSession().setAttribute("productList", pList);
+
+			// ###########################
+			ProductCategoryDaoImpl pcDao = new ProductCategoryDaoImpl();
+			List<ProductCategory> categories = pcDao.getProductCategories(null);
+			request.getSession().setAttribute("categories", categories);
 			response.sendRedirect("index.jsp");
 		}
 	}
